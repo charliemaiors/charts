@@ -3,6 +3,16 @@ entries:
   suggestarr:
   - apiVersion: v2
     appVersion: 1.0.20
+    created: "2025-05-23T19:28:34.156687441Z"
+    description: A Helm chart for Kubernetes
+    digest: fb0a3e515a4a0337c2ac3143ba32fceaa0fa61bf698b8f346286fd37e4b09e05
+    name: suggestarr
+    type: application
+    urls:
+    - suggestarr-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: 1.0.20
     created: "2025-05-23T19:22:03.792404729Z"
     description: A Helm chart for Kubernetes
     digest: 989e98422f80df04d6f3f10559b64f0d7d4da3a7d18b11bdd92df3a73ad7f730
@@ -31,4 +41,4 @@ entries:
     urls:
     - suggestarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-23T19:22:03.792416992Z"
+generated: "2025-05-23T19:28:34.156704853Z"
