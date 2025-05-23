@@ -64,7 +64,7 @@ spec:
         - name: config
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.existingClaim | default (include "home-assistant.fullname" .) }}
+            claimName: {{ include "suggestarr.fullname" . }}
           {{- else }}
           emptyDir: { }
           {{- end }}
