@@ -42,6 +42,20 @@ entries:
   suggestarr:
   - apiVersion: v2
     appVersion: 1.0.20
+    created: "2025-06-18T05:52:52.275994648Z"
+    description: SuggestArr is a project designed to automate media content recommendations
+      and download requests based on user activity in media servers like Jellyfin,
+      Plex, and now Emby. It retrieves recently watched content, searches for similar
+      titles using the TMDb API, and sends automated download requests to Jellyseer
+      or Overseer.
+    digest: 084c509401a3bd97191ec79c38a659338ddcfd9a52d95da174a785a22d630525
+    name: suggestarr
+    type: application
+    urls:
+    - suggestarr-0.4.4.tgz
+    version: 0.4.4
+  - apiVersion: v2
+    appVersion: 1.0.20
     created: "2025-05-26T06:05:16.864172435Z"
     description: A Helm chart for Kubernetes
     digest: 3b097075a23bba73680031f73b865ca9730f56e9b1568650ae5a04da15bf4594
@@ -90,4 +104,4 @@ entries:
     urls:
     - suggestarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-13T17:00:50.680231919Z"
+generated: "2025-06-18T05:52:52.276019775Z"
