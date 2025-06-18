@@ -1,6 +1,6 @@
 apiVersion: v2
-name: suggestarr
-description: SuggestArr is a project designed to automate media content recommendations and download requests based on user activity in media servers like Jellyfin, Plex, and now Emby. It retrieves recently watched content, searches for similar titles using the TMDb API, and sends automated download requests to Jellyseer or Overseer.
+name: profilarr
+description: Configuration management tool for Radarr/Sonarr that automates importing and version control of custom formats and quality profiles.
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -15,10 +15,10 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.4.2
+version: 0.1.0
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "1.0.20"
+appVersion: "v1.0.1"

@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "suggestarr.fullname" . }}
+  name: {{ include "profilarr.fullname" . }}
   labels:
-    {{- include "suggestarr.labels" . | nindent 4 }}
+    {{- include "profilarr.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "suggestarr.selectorLabels" . | nindent 6 }}
+      {{- include "profilarr.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,7 +18,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "suggestarr.labels" . | nindent 8 }}
+        {{- include "profilarr.labels" . | nindent 8 }}
         {{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
@@ -27,7 +27,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "suggestarr.serviceAccountName" . }}
+      serviceAccountName: {{ include "profilarr.serviceAccountName" . }}
       {{- with .Values.podSecurityContext }}
       securityContext:
         {{- toYaml . | nindent 8 }}
@@ -38,9 +38,9 @@ spec:
           securityContext:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          env:
-            - name: SUGGESTARR_PORT
-              value: {{ .Values.service.port | quote }}
+           env:
+            - name: TZ
+              value: {{ .Values.env.tz }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
@@ -65,11 +65,14 @@ spec:
           {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
-      volumes:
+          {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+     volumes:
         - name: config
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ include "suggestarr.fullname" . }}
+            claimName: {{ include "profilarr.fullname" . }}
           {{- else }}
           emptyDir: { }
           {{- end }}
