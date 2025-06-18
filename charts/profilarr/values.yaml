@@ -105,6 +105,7 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
+# Default persistence values, the volume will be mounted under /config
 persistence:
   storageClass: ""
   enabled: true
